@@ -6,7 +6,7 @@ Uma calculadora funcional desenvolvida inteiramente em Python! Feita para com o 
 
 Ao iniciar, a calculadora iniciará consigo um menu com dezesseis opções de operações matemáticas.
 
-<img width="401" height="353" alt="image" src="https://github.com/user-attachments/assets/23801dc3-3e74-4e5f-bf71-c915268d8535" />
+<img width="496" height="403" alt="Captura de tela 2026-10-14 202419" src="https://github.com/user-attachments/assets/81aabfe0-bbb3-4ded-9cc0-2c31f12751aa" />
 
 Para escolher, basta digitar o número atribuído antes de cada uma das operações matemáticas.
 | Como por exemplo, "10" para o Teorema de Pitágoras.
