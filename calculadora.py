@@ -1,7 +1,7 @@
 import math
 
 print("""Calculadora em Python!
-As operações serão realizadas conforme sua requisição!""")
+As operações serão realizadas conforme sua requisição. """)
 repetir = True
 while repetir:
     print("""
@@ -168,8 +168,7 @@ Quer entender um pouco melhor na prática? Qual vai ser o índice da nossa raiz?
                     radiciacao = math.pow(radicando, 1 / indice)
                     print(f"O resultado da radiciação de {radicando} pelo índice {indice} é igual a {radiciacao}!")
             else:
-                print("Por favor, insira um valor para índice maior do que 1.")
-            
+                print("Por favor, insira um valor para índice maior do que 1.")  
 
         case "8":
             print("""
@@ -253,10 +252,37 @@ Primeiro, me diga. Qual valor você tem? Você quer encontrar a hipotenusa com o
                     else:
                         print("O valor da hipotenusa não pode ser negativo! Por favor, escolha outro número.")
 
-        # case "11":
-            # 11. MMC (Mínimo Múltiplo Comum);
-        # case "12":
-            # 12. MDC (Máximo Divisor Comum);
+        case "11": # MMC (Mínimo Múltiplo Comum);
+            print("""
+O Mínimo Múltiplo Comum é o menor número inteiro positivo, diferente de zero, múltiplo comum dentre uma série de números.
+Para entendermos melhor, vou dar um exemplo. O MMC de 5, 10 e 20 é igual a vinte; Como todos os números são múltiplos de cinco, o 20 é o primeiro a ser encontrado em comum, dentre seus valores!
+Outro exemplo é o MMC de 3, 5 e 7, que é igual a 105; uma vez que os três números são divisíveis por 105, e este é o menor número inteiro positivo múltiplo deles.
+Dinâmico, não é mesmo? Vamos calcular o MMC de quantos números?""")
+            n = int(input())
+            numeros = []
+            mmc = 1
+            for i in range(n):
+                print(f"Qual o {i + 1}º número?")
+                numeros.append(int(input()))
+            for i in range(len(numeros)):
+                mmc = math.lcm(*numeros)
+            print(f"O valor do Mínimo Múltiplo Comum entre os números {numeros} é igual a {mmc}!")
+
+        case "12":
+            print("""
+O Máximo Divisor Comum é o maior número inteiro capaz de dividir uma série de números e retornar um valor exato, sem restos.
+Para entendermos melhor, vou dar um exemplo. O MDC de 5, 10 e 20 é igual a cinco; uma vez que os três números são divisíveis por cinco, o maior número inteiro capaz de dividir todos eles.
+Outro exemplo é o MDC de 3, 6 e 9, que é igual a três; uma vez que os três números são divisíveis por três, e este é o maior número inteiro capaz de dividir todos eles.
+Dinâmico, não é mesmo? Vamos calcular o MDC de quantos números?""")
+            n = int(input())
+            numeros = []
+            mdc = 1
+            for i in range(n):
+                print(f"Qual o {i + 1}º número?")
+                numeros.append(int(input()))
+            for i in range(len(numeros)):
+                mdc = math.gcd(*numeros)
+            print(f"O valor do Máximo Divisor Comum entre os números {numeros} é igual a {mdc}!")
 
         case "13":
             print("""
@@ -271,6 +297,7 @@ Vamos nessa? Qual o valor do ângulo você gostaria de descobrir o seno?""")
             valor = int(input())
             seno = math.sin(math.radians(valor))
             print(f"O seno do nosso ângulo de {valor}º equivale a {seno}!")
+
         case "14":
             print("""
 O Cosseno é um dos valores mais importantes do mundo da Trigonometria! 
@@ -283,8 +310,9 @@ Desta forma, fica didático: O cateto que estiver oposto ao nosso ângulo de ref
 Assim, usaremos o valor do cateto adjacente dividido pela hipotenusa para calcularmos nosso cosseno!
 Vamos nessa? Qual o valor do ângulo você gostaria de descobrir o cosseno?""")
             valor = int(input())
-            cosseno = math.cos(valor)
+            cosseno = math.cos(math.radians(valor))
             print(f"O cosseno do nosso ângulo de {valor}º equivale a {cosseno}!")
+
         case "15":
             print("""
 A tangente se trata da divisão dos dois catetos que compõem um triângulo retângulo.
@@ -294,10 +322,11 @@ O lado mais longo do nosso triângulo retângulo chamaremos de hipotenusa.
 Mas, para entendermos como identificar os catetos adjacente e oposto, precisaremos antes verificar o ângulo de referência, que será um dos ângulos agudos do nosso triângulo retângulo.
 Desta forma, fica didático: O cateto que estiver oposto ao nosso ângulo de referência, será o nosso cateto oposto. O cateto que estiver adjacente ao nosso ângulo de referência, será o nosso cateto adjacente!
 Assim, simplesmente precisaremos dividir esses valores, o \033[1mcateto oposto\033[0m dividido pelo \033[1mcateto adjacente\033[0m!
-Vamos nessa? Qual o valor do ângulo você gostaria de descobrir a tangente?""")
+Vamos nessa? Qual o valor do ângulo você gostaria de descobrir a' tangente?""")
             valor = int(input())
-            tangente = math.tan(valor)
+            tangente = math.tan(math.radians(valor))
             print(f"A tangente do nosso ângulo de {valor}º equivale a {tangente}!")
+
         case "16":
             print("""
 A porcentagem é um dos mais comuns e populares usos cotidianos da matemática nos tempos modernos!
@@ -312,5 +341,6 @@ Vamos lá! Qual o número que calcularemos uma porcentagem hoje?""")
             fatorCem = fator / 100
             porcentagem = base * fatorCem
             print(f"{fator}% de {base} equivale a {porcentagem}!")
+
         case _:
             print("A opção que você escolheu é inválida. Por favor, tente novamente!")
